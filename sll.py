@@ -58,6 +58,18 @@ class SList():
             print(runner.val)
             runner = runner.next
         return self
+    
+    def add_to_back(self, val):
+        if self.head == None:
+            self.add_to_front(val)
+            return self
+            
+        new_node = Node(val)
+        runner = self.head
+        while (runner.next != None):
+            runner = runner.next
+        runner.next = new_node
+        return self
 
 
 
