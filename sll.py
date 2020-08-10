@@ -43,10 +43,10 @@ class Node():
 
 class SList():
     def __init__(self):
-        self.head=None
+        self.head = None
     
     def add_to_front(self, val):
-        new_node=Node(val)
+        new_node = Node(val)
         current_head = self.head
         new_node.next = current_head
         self.head = new_node
