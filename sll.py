@@ -51,6 +51,13 @@ class SList():
         new_node.next = current_head
         self.head = new_node
         return self
+    
+    def print_values(self):
+        runner = self.head
+        while (runner != None):
+            print(runner.val)
+            runner = runner.next
+        return self
 
 
 
