@@ -65,8 +65,21 @@ class SLL:
             return self
         else:
             runner = self.head
-            print(f'The Node being removed is: {runner.next.next.value}')
+            # print(f'The Node being removed is: {runner.next.next.value}')
             while runner.next.next != None:
+                runner = runner.next
+            runner.next = None
+            return self
+    
+    def remove_val(self, value):
+        if self.head.value == value:
+            return self
+        elif self.head.next.value == value:
+            self.head = None
+            return self
+        else:
+            runner = self.head
+            while runner.next.value != value: #25
                 runner = runner.next
             runner.next = None
             return self
@@ -79,7 +92,7 @@ class SLL:
                 runner = runner.next    
 
 sll = SLL()
-sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).remove_from_back().print()
+sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).add_Node(25).add_Node(30).remove_from_back().remove_val(25).print()
 
         
 
