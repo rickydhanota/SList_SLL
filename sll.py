@@ -80,7 +80,7 @@ class SLL:
             return self
         else:
             runner = self.head
-            while runner.next.value != value: #25
+            while runner.next.value != value: 
                 runner = runner.next
             runner.next = runner.next.next
             return self
