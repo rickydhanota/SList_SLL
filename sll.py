@@ -70,6 +70,7 @@ class SLL:
                 runner = runner.next
             runner.next = None
             return self
+# sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).add_Node(25).add_Node(30).remove_from_back().remove_val(25).print()
     
     def remove_val(self, value):
         if self.head.value == value:
@@ -81,9 +82,24 @@ class SLL:
             runner = self.head
             while runner.next.value != value: #25
                 runner = runner.next
-            runner.next = None
+            runner.next = runner.next.next
             return self
     
+    def add_value(self, new_Node, position):
+        if self.head == None:
+            return self
+        else:
+            runner = self.head
+            index = 1 #this will help keep track of where we're at
+            while runner != None:
+                if index == position - 1:
+                    new_Node.next = runner.next
+                    runner.next = new_Node
+                    return self
+                index += 1 #this tells us at what position in the SLL we're at, i.e., position 1, position 2 , etc
+                runner = runner.next
+            return self
+
     def print(self):
         if self.head:
             runner = self.head
@@ -92,7 +108,7 @@ class SLL:
                 runner = runner.next    
 
 sll = SLL()
-sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).add_Node(25).add_Node(30).remove_from_back().remove_val(25).print()
+sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).add_Node(25).add_Node(30).remove_from_back().remove_val(20).add_value(Node(45), 2).print()
 
         
 
