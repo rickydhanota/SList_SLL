@@ -85,6 +85,19 @@ class SLL:
             runner.next = runner.next.next
             return self
     
+    def find(self, value):
+        # if self.head.value == value:
+        #     print(f'The Node you are searching for is {self.head.value}')
+        if self.head.value != value:
+            runner = self.head
+            while runner.value != value:
+                runner = runner.next
+            print(runner.value)
+            return self
+        else: 
+            print("Node not found")
+            return self
+    
     def add_value(self, new_Node, position):
         if self.head == None:
             return self
@@ -108,7 +121,7 @@ class SLL:
                 runner = runner.next    
 
 sll = SLL()
-sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).add_Node(25).add_Node(30).remove_from_back().remove_val(20).add_value(Node(45), 2).print()
+sll.add_Node(5).add_Node(10).add_Node(15).add_Node(20).add_Node(25).add_Node(30).remove_from_back().remove_val(20).add_value(Node(45), 2).find(100).print()
 
         
 
